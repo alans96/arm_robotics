@@ -3,7 +3,7 @@ import numpy as np
 import PoseModule as pm
 from openpyxl import Workbook
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Fonte da imagem
+cap = cv2.VideoCapture(0)  # Fonte da imagem
 fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # Fonte da para gravação
 out = cv2.VideoWriter('test_r.avi', fourcc, 20.0, (640, 480))  # Formato do vídeo
 
