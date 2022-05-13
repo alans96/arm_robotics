@@ -10,7 +10,7 @@ from Ui_MainWindow import Ui_MainWindow
 ###########################################
 import cv2
 import numpy as np
-import PoseModule_v2 as pm
+import PoseModule as pm
 from openpyxl import Workbook
 ###########################################
 
