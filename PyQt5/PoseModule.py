@@ -2,6 +2,10 @@ import cv2
 import mediapipe as mp
 import math
 
+################
+from Ui_MainWindow import Ui_MainWindow
+################
+
 
 class PoseDetector:  # Classe para detectar pessoas
 
@@ -23,6 +27,26 @@ class PoseDetector:  # Classe para detectar pessoas
         self.pose = self.mpPose.Pose(self.static_image_mode, self.model_complexity, self.smooth_landmarks,
                                      self.enable_segmentation, self.smooth_segmentation, self.min_detection_confidence,
                                      self.min_tracking_confidence)
+        
+        ##########
+        self.ui = Ui_MainWindow()
+        self.ui.start.clicked.connect(self.show_btn)
+        #########
+
+    ###########    
+    def show_btn(self):
+        
+        # Escolher a quantidade de classes
+        teste = int(self.ui.comboBox.currentText())
+
+        # variação do ângulo
+        var = int(self.ui.lineEdit_var.text())
+
+        # Numero de amostragem
+        #num = int(self.ui.lineEdit_amostra.text())
+        return teste, var
+   
+        ############
 
     def findPose(self, img, draw=True):
         """Encontra o corpo da pessoa"""
@@ -63,12 +87,11 @@ class PoseDetector:  # Classe para detectar pessoas
             angle += 360
 
         if draw:
-            var = 5  # variação do ângulo
-            teste = 3
+# Qual teste será usado
 
             # Teste 1
-            if teste == 1:
-                if 90-var < angle < 91+var or 180-var < angle < 180:
+            if self.teste == 1:
+                if 90-self.var < angle < 91+self.var or 180-self.var < angle < 180:
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
@@ -99,8 +122,9 @@ class PoseDetector:  # Classe para detectar pessoas
                                 cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
 
             # Teste 2
-            elif teste == 2:
-                if teste == 2 and (90 - var < angle < 91 + var or 180 - var < angle < 180 or 30 - var < angle < 31 + var):
+            elif self.teste == 2:
+                if self.teste == 2 and (90 - self.var < angle < 91 + self.var or 180 - self.var < angle < 180 or 
+                                        30 - self.var < angle < 31 + self.var):
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
@@ -131,8 +155,9 @@ class PoseDetector:  # Classe para detectar pessoas
                                 cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
 
             # Teste 3
-            elif teste == 3:
-                if teste == 3 and (90 - var < angle < 91 + var or 180 - var < angle < 180 or 30 - var < angle < 31 + var or 45 - var < angle < 41 + var):
+            elif self.teste == 3:
+                if self.teste == 3 and (90 - self.var < angle < 91 + self.var or 180 - self.var < angle < 180 or 
+                                        30 - self.var < angle < 31 + self.var or 45 - self.var < angle < 41 + self.var):
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)

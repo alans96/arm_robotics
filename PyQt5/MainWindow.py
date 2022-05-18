@@ -2,10 +2,8 @@
 # Funções 
 #
 
-
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog 
-from PyQt5 import uic
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from Ui_MainWindow import Ui_MainWindow
 ###########################################
 import cv2
@@ -21,32 +19,64 @@ class MainWindow():
         self.ui.setupUi(self.main_win)
 
         # Define qual tela inicia
-        self.ui.stackedWidget.setCurrentWidget(self.ui.page2)
+        self.ui.Pages.setCurrentWidget(self.ui.page_home)
 
-        self.ui.pushButton2.clicked.connect(self.show2)
-        self.ui.pushButton3.clicked.connect(self.show3)
-        self.ui.pushButton4.clicked.connect(self.show4)
-        self.ui.start2.clicked.connect(self.openpy)
+        # Botão do menu
+        self.ui.btn_contatos.clicked.connect(self.show_contatos)
+        self.ui.btn_funcoes.clicked.connect(self.show_funcao)
+        self.ui.btn_home.clicked.connect(self.show_home)
+        self.ui.btn_sobre.clicked.connect(self.show_sobre)
+
+        # Botão Start
+        self.ui.start.clicked.connect(self.show_btn)
+
+
+        #ComboBox (Selecionar a quant. de classe)
+        
+
+        # Variância  
+
+        # N. Amostra
+
+
 
     def show(self):
         self.main_win.show()
-    
-    # Função do botão
-    def show2(self):
-        self.ui.stackedWidget.setCurrentWidget(self.ui.page2)
-    
-    def show3(self):
-        self.ui.stackedWidget.setCurrentWidget(self.ui.page3)
-    
-    def show4(self):
-        self.ui.stackedWidget.setCurrentWidget(self.ui.page4)
 
-    def openpy(self):
-        #caminho,_ = QFileDialog.getOpenFileName(None, 'Abrir um Arquivo Python', "/home/alan/Projetos", 'Arquivo Python(*.py)')
+
+    ##############################
+    # Função do botão menu
+    ##############################
+    def show_contatos(self):
+        self.ui.Pages.setCurrentWidget(self.ui.page_contatos) 
+    def show_home(self):
+        self.ui.Pages.setCurrentWidget(self.ui.page_home)
+    def show_funcao(self):
+        self.ui.Pages.setCurrentWidget(self.ui.page_funcoes)
+    def show_sobre(self):
+        self.ui.Pages.setCurrentWidget(self.ui.page_sobre)
+    
+
+    #######################################
+    # Função do botão Start
+    #######################################
+    def show_btn(self):
         
-        ####################################################
+        # Escolher a quantidade de classes
+        teste = int(self.ui.comboBox.currentText())
+
+        # variação do ângulo
+        var = int(self.ui.lineEdit_var.text())
+
+        # Numero de amostragem
+        #num = int(self.ui.lineEdit_amostra.text())
+
+
+    
+        ###############################
         #        CODIGO DUMMY
-        ####################################################
+        ###############################
+        
         cap = cv2.VideoCapture(0)  # Fonte da imagem
         fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # Fonte da imagem
         out = cv2.VideoWriter('test_r.avi', fourcc, 20.0, (640, 480))  # Formato do vídeo
@@ -105,10 +135,6 @@ class MainWindow():
                         # Número da repetição
                         cv2.putText(img, str(int(count)), (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 5)
                         
-                        # Excel
-                        var = 5  # variação do ângulo
-                        teste = 3
-
                         # Teste 1
                         if teste == 1:
                             if 90 - var < angle < 91 + var:
@@ -118,6 +144,7 @@ class MainWindow():
                                 wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
                                             lmList[15][1], lmList[15][2], 0])
 
+                        # Teste 2
                         if teste == 2:
                             if 90 - var < angle < 91 + var:
                                 wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
@@ -131,6 +158,7 @@ class MainWindow():
                                 wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
                                             lmList[15][1], lmList[15][2], 1])
 
+                        # Teste 3
                         if teste == 3:
                             if 180 - var < angle < 180:
                                 wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
@@ -146,6 +174,7 @@ class MainWindow():
                             elif 90 - var < angle < 91 + var:
                                 wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
                                             lmList[15][1], lmList[15][2], 3])
+
                     """try:
                         # Left Arm
                         angle = detector.findAngle(img, 12, 14, 16)
@@ -188,12 +217,12 @@ class MainWindow():
         cap.release()
         out.release()
         cv2.destroyAllWindows()
-        ####################################################
+        ###############################
         #        CODIGO DUMMY
-        ####################################################
+        ###############################'''
     
 
-
+# Inicializar
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_win= MainWindow()
