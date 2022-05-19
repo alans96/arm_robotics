@@ -27,26 +27,13 @@ class PoseDetector:  # Classe para detectar pessoas
         self.pose = self.mpPose.Pose(self.static_image_mode, self.model_complexity, self.smooth_landmarks,
                                      self.enable_segmentation, self.smooth_segmentation, self.min_detection_confidence,
                                      self.min_tracking_confidence)
+
+        self.var = 2
+        self.teste= 2
         
-        ##########
-        self.ui = Ui_MainWindow()
-        self.ui.start.clicked.connect(self.show_btn)
-        #########
 
-    ###########    
-    def show_btn(self):
-        
-        # Escolher a quantidade de classes
-        teste = int(self.ui.comboBox.currentText())
 
-        # variação do ângulo
-        var = int(self.ui.lineEdit_var.text())
 
-        # Numero de amostragem
-        #num = int(self.ui.lineEdit_amostra.text())
-        return teste, var
-   
-        ############
 
     def findPose(self, img, draw=True):
         """Encontra o corpo da pessoa"""
@@ -82,16 +69,29 @@ class PoseDetector:  # Classe para detectar pessoas
         angle = math.degrees(math.atan2(y3 - y2, x3 - x2) -
                              math.atan2(y1 - y2, x1 - x2))
 
-        # Não mostrar ângulo negativo
         if angle < 0:
             angle += 360
 
         if draw:
-# Qual teste será usado
-
+            # Qual teste será usado
             # Teste 1
-            if self.teste == 1:
-                if 90-self.var < angle < 91+self.var or 180-self.var < angle < 180:
+            if self.teste == 2:
+                if 90-self.var < angle < 91+self.var or 180-self.var < angle < 181+self.var:
+                    # Desenhar linha de conecção entre os pontos
+                    cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
+                    cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
+
+                    # Desenhar 2 circulos entre os marcadores de interesse
+                    cv2.circle(img, (x1, y1), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x1, y1), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x2, y2), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x2, y2), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x3, y3), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x3, y3), 8, (50, 200, 255), 2)
+                    cv2.putText(img, str(int(angle)), (500, 100),
+                                cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
+                
+                elif 270-self.var < angle < 271 +self.var:
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
@@ -122,9 +122,23 @@ class PoseDetector:  # Classe para detectar pessoas
                                 cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
 
             # Teste 2
-            elif self.teste == 2:
-                if self.teste == 2 and (90 - self.var < angle < 91 + self.var or 180 - self.var < angle < 180 or 
-                                        30 - self.var < angle < 31 + self.var):
+            elif self.teste == 3:
+                if 90 - self.var < angle < 91 + self.var or 180 - self.var < angle < 180 or 30 - self.var < angle < 31 + self.var:
+                    # Desenhar linha de conecção entre os pontos
+                    cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
+                    cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
+
+                    # Desenhar 2 circulos entre os marcadores de interesse
+                    cv2.circle(img, (x1, y1), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x1, y1), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x2, y2), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x2, y2), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x3, y3), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x3, y3), 8, (50, 200, 255), 2)
+                    cv2.putText(img, str(int(angle)), (500, 100),
+                                cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
+                
+                elif 180-self.var< angle <181+self.var or 270-self.var< angle <270+self.var or 330-self.var< angle <331+self.var:
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
@@ -155,9 +169,23 @@ class PoseDetector:  # Classe para detectar pessoas
                                 cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
 
             # Teste 3
-            elif self.teste == 3:
-                if self.teste == 3 and (90 - self.var < angle < 91 + self.var or 180 - self.var < angle < 180 or 
-                                        30 - self.var < angle < 31 + self.var or 45 - self.var < angle < 41 + self.var):
+            elif self.teste == 4:
+                if 180-self.var< angle <181+self.var or 135-self.var< angle <136+self.var or 90-self.var< angle <91+self.var or 30-self.var< angle <31+self.var:
+                    # Desenhar linha de conecção entre os pontos
+                    cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
+                    cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)
+
+                    # Desenhar 2 circulos entre os marcadores de interesse
+                    cv2.circle(img, (x1, y1), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x1, y1), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x2, y2), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x2, y2), 8, (50, 200, 255), 2)
+                    cv2.circle(img, (x3, y3), 4, (50, 200, 255), cv2.FILLED)
+                    cv2.circle(img, (x3, y3), 8, (50, 200, 255), 2)
+                    cv2.putText(img, str(int(angle)), (500, 100),
+                                cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255), 2)
+                
+                elif 180-self.var< angle <181+self.var or 225-self.var< angle <226+self.var or 270-self.var< angle <271+self.var or 330-self.var< angle <331+self.var:
                     # Desenhar linha de conecção entre os pontos
                     cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
                     cv2.line(img, (x3, y3), (x2, y2), (0, 0, 255), 3)

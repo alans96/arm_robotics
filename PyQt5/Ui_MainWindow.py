@@ -166,25 +166,38 @@ class Ui_MainWindow(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.main_center)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.Pages = QtWidgets.QStackedWidget(self.main_center)
+        self.Pages.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.Pages.setAutoFillBackground(False)
         self.Pages.setObjectName("Pages")
         self.page_home = QtWidgets.QWidget()
         self.page_home.setObjectName("page_home")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.page_home)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.logo = QtWidgets.QLabel(self.page_home)
-        self.logo.setObjectName("logo")
-        self.verticalLayout_7.addWidget(self.logo)
         self.label_3 = QtWidgets.QLabel(self.page_home)
+        self.label_3.setGeometry(QtCore.QRect(78, 240, 231, 20))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
+        self.label_3.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.label_3.setObjectName("label_3")
-        self.verticalLayout_7.addWidget(self.label_3)
+        self.frame_6 = QtWidgets.QFrame(self.page_home)
+        self.frame_6.setEnabled(True)
+        self.frame_6.setGeometry(QtCore.QRect(80, 0, 223, 228))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame_6.sizePolicy().hasHeightForWidth())
+        self.frame_6.setSizePolicy(sizePolicy)
+        self.frame_6.setMaximumSize(QtCore.QSize(223, 228))
+        self.frame_6.setStyleSheet("background-image: url(:/logo_imagem/ufabc.png);")
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
         self.Pages.addWidget(self.page_home)
         self.page_funcoes = QtWidgets.QWidget()
         self.page_funcoes.setObjectName("page_funcoes")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.page_funcoes)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.label_2 = QtWidgets.QLabel(self.page_funcoes)
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout_8.addWidget(self.label_2)
         self.frame_main = QtWidgets.QFrame(self.page_funcoes)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -196,16 +209,114 @@ class Ui_MainWindow(object):
         self.frame_main.setObjectName("frame_main")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_main)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.label_4 = QtWidgets.QLabel(self.frame_main)
+        self.frame_4 = QtWidgets.QFrame(self.frame_main)
+        self.frame_4.setStyleSheet("background-color: rgb(211, 215, 207);")
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.label_2 = QtWidgets.QLabel(self.frame_4)
+        self.label_2.setGeometry(QtCore.QRect(-10, 0, 390, 17))
+        self.label_2.setStyleSheet("")
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_9.addWidget(self.frame_4)
+        self.frame = QtWidgets.QFrame(self.frame_main)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.btn_left = QtWidgets.QPushButton(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_left.sizePolicy().hasHeightForWidth())
+        self.btn_left.setSizePolicy(sizePolicy)
+        self.btn_left.setStyleSheet("QPushButton:pressed{\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius:15px;\n"
+"border-color: black;\n"
+"\n"
+"background-color: rgb(85, 87, 83);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"background-color: rgb(211, 215, 207);\n"
+"}")
+        self.btn_left.setObjectName("btn_left")
+        self.horizontalLayout_2.addWidget(self.btn_left)
+        self.btn_right = QtWidgets.QPushButton(self.frame)
+        self.btn_right.setStyleSheet("QPushButton:pressed{\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius:15px;\n"
+"border-color: black;\n"
+"\n"
+"background-color: rgb(85, 87, 83);\n"
+"}\n"
+"QPushButton{\n"
+"    border-top-left-radius:5px;\n"
+"    border-top-right-radius:5px;\n"
+"    border-bottom-left-radius:5px;\n"
+"    border-bottom-right-radius:5px;\n"
+"    \n"
+"    background-color: rgb(211, 215, 207);\n"
+"    \n"
+"}")
+        self.btn_right.setObjectName("btn_right")
+        self.horizontalLayout_2.addWidget(self.btn_right)
+        self.verticalLayout_9.addWidget(self.frame)
+        self.frame_3 = QtWidgets.QFrame(self.frame_main)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        self.frame_3.setSizePolicy(sizePolicy)
+        self.frame_3.setMaximumSize(QtCore.QSize(16777215, 170))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.Pages_start = QtWidgets.QStackedWidget(self.frame_3)
+        self.Pages_start.setGeometry(QtCore.QRect(-10, 0, 391, 181))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Pages_start.sizePolicy().hasHeightForWidth())
+        self.Pages_start.setSizePolicy(sizePolicy)
+        self.Pages_start.setObjectName("Pages_start")
+        self.page1 = QtWidgets.QWidget()
+        self.page1.setObjectName("page1")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.page1)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.label_4 = QtWidgets.QLabel(self.page1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
         self.label_4.setSizePolicy(sizePolicy)
         self.label_4.setObjectName("label_4")
-        self.verticalLayout_9.addWidget(self.label_4)
-        self.lineEdit_amostra = QtWidgets.QLineEdit(self.frame_main)
-        self.lineEdit_amostra.setStyleSheet("font: \'Quantidade de Amostra\'11pt \"Ubuntu\";\n"
+        self.verticalLayout_10.addWidget(self.label_4)
+        self.lineEdit_amostra_1 = QtWidgets.QLineEdit(self.page1)
+        self.lineEdit_amostra_1.setStyleSheet("font: \'Quantidade de Amostra\'11pt \"Ubuntu\";\n"
 "color: rgb(0, 0, 0);\n"
 "border-top-left-radius:5px;\n"
 "border-top-right-radius:5px;\n"
@@ -213,44 +324,44 @@ class Ui_MainWindow(object):
 "border-bottom-right-radius:5px;\n"
 "    \n"
 "background-color: rgb(211, 215, 207);")
-        self.lineEdit_amostra.setText("")
-        self.lineEdit_amostra.setObjectName("lineEdit_amostra")
-        self.verticalLayout_9.addWidget(self.lineEdit_amostra)
-        self.label_5 = QtWidgets.QLabel(self.frame_main)
+        self.lineEdit_amostra_1.setText("")
+        self.lineEdit_amostra_1.setObjectName("lineEdit_amostra_1")
+        self.verticalLayout_10.addWidget(self.lineEdit_amostra_1)
+        self.label_5 = QtWidgets.QLabel(self.page1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
         self.label_5.setSizePolicy(sizePolicy)
         self.label_5.setObjectName("label_5")
-        self.verticalLayout_9.addWidget(self.label_5)
-        self.lineEdit_var = QtWidgets.QLineEdit(self.frame_main)
-        self.lineEdit_var.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.verticalLayout_10.addWidget(self.label_5)
+        self.lineEdit_var_1 = QtWidgets.QLineEdit(self.page1)
+        self.lineEdit_var_1.setStyleSheet("color: rgb(0, 0, 0);\n"
 "border-top-left-radius:5px;\n"
 "border-top-right-radius:5px;\n"
 "border-bottom-left-radius:5px;\n"
 "border-bottom-right-radius:5px;\n"
 "    \n"
 "background-color: rgb(211, 215, 207);")
-        self.lineEdit_var.setText("")
-        self.lineEdit_var.setObjectName("lineEdit_var")
-        self.verticalLayout_9.addWidget(self.lineEdit_var)
-        self.comboBox = QtWidgets.QComboBox(self.frame_main)
-        self.comboBox.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.lineEdit_var_1.setText("")
+        self.lineEdit_var_1.setObjectName("lineEdit_var_1")
+        self.verticalLayout_10.addWidget(self.lineEdit_var_1)
+        self.comboBox_1 = QtWidgets.QComboBox(self.page1)
+        self.comboBox_1.setStyleSheet("color: rgb(0, 0, 0);\n"
 "border-top-left-radius:5px;\n"
 "border-top-right-radius:5px;\n"
 "border-bottom-left-radius:5px;\n"
 "border-bottom-right-radius:5px;\n"
 "    \n"
 "background-color: rgb(211, 215, 207);")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.verticalLayout_9.addWidget(self.comboBox)
-        self.start = QtWidgets.QPushButton(self.frame_main)
-        self.start.setStyleSheet("border-top-left-radius:5px;\n"
+        self.comboBox_1.setObjectName("comboBox_1")
+        self.comboBox_1.addItem("")
+        self.comboBox_1.addItem("")
+        self.comboBox_1.addItem("")
+        self.comboBox_1.addItem("")
+        self.verticalLayout_10.addWidget(self.comboBox_1)
+        self.start1 = QtWidgets.QPushButton(self.page1)
+        self.start1.setStyleSheet("border-top-left-radius:5px;\n"
 "border-top-right-radius:5px;\n"
 "border-bottom-left-radius:5px;\n"
 "border-bottom-right-radius:5px;\n"
@@ -258,8 +369,79 @@ class Ui_MainWindow(object):
 "background-color: rgb(211, 215, 207);\n"
 "\n"
 "")
-        self.start.setObjectName("start")
-        self.verticalLayout_9.addWidget(self.start)
+        self.start1.setObjectName("start1")
+        self.verticalLayout_10.addWidget(self.start1)
+        self.Pages_start.addWidget(self.page1)
+        self.page2 = QtWidgets.QWidget()
+        self.page2.setObjectName("page2")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.page2)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.label_7 = QtWidgets.QLabel(self.page2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_11.addWidget(self.label_7)
+        self.lineEdit_amostra_2 = QtWidgets.QLineEdit(self.page2)
+        self.lineEdit_amostra_2.setStyleSheet("font: \'Quantidade de Amostra\'11pt \"Ubuntu\";\n"
+"color: rgb(0, 0, 0);\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"    \n"
+"background-color: rgb(211, 215, 207);")
+        self.lineEdit_amostra_2.setText("")
+        self.lineEdit_amostra_2.setObjectName("lineEdit_amostra_2")
+        self.verticalLayout_11.addWidget(self.lineEdit_amostra_2)
+        self.label_6 = QtWidgets.QLabel(self.page2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_11.addWidget(self.label_6)
+        self.lineEdit_var_2 = QtWidgets.QLineEdit(self.page2)
+        self.lineEdit_var_2.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"    \n"
+"background-color: rgb(211, 215, 207);")
+        self.lineEdit_var_2.setText("")
+        self.lineEdit_var_2.setObjectName("lineEdit_var_2")
+        self.verticalLayout_11.addWidget(self.lineEdit_var_2)
+        self.comboBox_2 = QtWidgets.QComboBox(self.page2)
+        self.comboBox_2.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"    \n"
+"background-color: rgb(211, 215, 207);")
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.verticalLayout_11.addWidget(self.comboBox_2)
+        self.start2 = QtWidgets.QPushButton(self.page2)
+        self.start2.setStyleSheet("border-top-left-radius:5px;\n"
+"border-top-right-radius:5px;\n"
+"border-bottom-left-radius:5px;\n"
+"border-bottom-right-radius:5px;\n"
+"    \n"
+"background-color: rgb(211, 215, 207);\n"
+"\n"
+"")
+        self.start2.setObjectName("start2")
+        self.verticalLayout_11.addWidget(self.start2)
+        self.Pages_start.addWidget(self.page2)
+        self.verticalLayout_9.addWidget(self.frame_3)
         self.verticalLayout_8.addWidget(self.frame_main)
         self.Pages.addWidget(self.page_funcoes)
         self.page_contatos = QtWidgets.QWidget()
@@ -321,7 +503,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.toolbox.setCurrentIndex(0)
-        self.Pages.setCurrentIndex(1)
+        self.Pages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -331,18 +513,26 @@ class Ui_MainWindow(object):
         self.btn_funcoes.setText(_translate("MainWindow", "Funções"))
         self.btn_contatos.setText(_translate("MainWindow", "Contatos"))
         self.btn_sobre.setText(_translate("MainWindow", "Sobre"))
-        self.toolbox.setItemText(self.toolbox.indexOf(self.Menu), _translate("MainWindow", "Page 1"))
+        self.toolbox.setItemText(self.toolbox.indexOf(self.Menu), _translate("MainWindow", "Menu"))
         self.label.setText(_translate("MainWindow", "Sistema de Captura de Posições do Braço"))
-        self.logo.setText(_translate("MainWindow", "imagem da uf"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Projeto de Iniciação Cientifica</p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "Parâmetros"))
+        self.label_2.setText(_translate("MainWindow", "   Parâmetros"))
+        self.btn_left.setText(_translate("MainWindow", "Esquerdo"))
+        self.btn_right.setText(_translate("MainWindow", "Direito"))
         self.label_4.setText(_translate("MainWindow", "Quantidade de Amostra"))
         self.label_5.setText(_translate("MainWindow", "Variância"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "Selecione a Quantidade de Classe"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "2"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "3"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "4"))
-        self.start.setText(_translate("MainWindow", "Start"))
+        self.comboBox_1.setItemText(0, _translate("MainWindow", "Selecione a Quantidade de Classe"))
+        self.comboBox_1.setItemText(1, _translate("MainWindow", "2"))
+        self.comboBox_1.setItemText(2, _translate("MainWindow", "3"))
+        self.comboBox_1.setItemText(3, _translate("MainWindow", "4"))
+        self.start1.setText(_translate("MainWindow", "Start"))
+        self.label_7.setText(_translate("MainWindow", "Quantidade de Amostra"))
+        self.label_6.setText(_translate("MainWindow", "Variância"))
+        self.comboBox_2.setItemText(0, _translate("MainWindow", "Selecione a Quantidade de Classe"))
+        self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
+        self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
+        self.comboBox_2.setItemText(3, _translate("MainWindow", "4"))
+        self.start2.setText(_translate("MainWindow", "Start"))
         self.label_12.setText(_translate("MainWindow", "Git"))
         self.label_13.setText(_translate("MainWindow", "link: "))
         self.label_14.setText(_translate("MainWindow", "Email"))
@@ -350,3 +540,4 @@ class Ui_MainWindow(object):
         self.label_16.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Sobre</p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "Texto sobre o programa"))
         self.base.setText(_translate("MainWindow", "PyArmy"))
+import logo
