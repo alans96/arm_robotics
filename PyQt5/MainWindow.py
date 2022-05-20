@@ -4,7 +4,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QToolBox
-from Ui_PyArm import Ui_MainWindow
+from Ui_MainWindow import Ui_MainWindow
 ###########################################
 import cv2
 import numpy as np
