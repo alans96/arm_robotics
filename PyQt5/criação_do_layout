@@ -1,0 +1,9 @@
+ Fazer o arquivo no Qtdsiner
+ 
+ depois no visual code na pasta do arquivo
+ 
+ usar o comando pyuic5 (nome do arquivo .ui) -o (nome do arquivo .py)
+
+Para imagens
+
+ usar o comando pyrcc5 -o ARQUIVO_PYTHON.py ARQUIVOS.qrc

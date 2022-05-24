@@ -3,13 +3,14 @@ import numpy as np
 import PoseModule as pm
 from openpyxl import Workbook
 
+
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Fonte da imagem
-fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # Fonte da para gravação
+fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # Fonte da imagem
 out = cv2.VideoWriter('test_r.avi', fourcc, 20.0, (640, 480))  # Formato do vídeo
 
-# Criação do excel
+#  Criação do excel
 wb = Workbook()
-# workbook_name = "Left_Arm.xlsx"
+#  workbook_name = "Left_Arm.xlsx"
 workbook_name = "Right_Arm.xlsx"
 wb1 = wb.active
 wb1.title = "Landmarks"
@@ -26,7 +27,7 @@ while cap.isOpened():
     img = cv2.flip(img, 180)
 
     if ret is True:
-        # Detectar o corpo e marcadores sem desenhar
+        #  Detectar o corpo e marcadores sem desenhar
         img = detector.findPose(img, False)
         lmList = detector.findPosition(img, False)
 
@@ -37,6 +38,9 @@ while cap.isOpened():
                 angle = detector.findAngle(img, 11, 13, 15)
                 # fazer o angulo converter de 0 a 100
                 per = np.interp(angle, (40, 171), (0, 100))
+                # barra
+                bar = np.interp(angle, (40, 171), (400, 100))
+                # print(int(angle), int(per))
 
                 # Contagem das repetições
                 if per == 0:
@@ -49,20 +53,63 @@ while cap.isOpened():
                         dir = 0
 
             finally:
+                # Barra retangular fixa
+                cv2.rectangle(img, (50, 400), (50, 400), (0, 255, 0), 3)
+                # Barra móvel
+                cv2.rectangle(img, (50, int(bar)), (60, 400), (0, 255, 0), cv2.FILLED)
+                cv2.putText(img, f'{int(per)}%', (55, 300), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 4)
+
                 # Número da repetição
                 cv2.putText(img, str(int(count)), (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 5)
-
+                
                 # Excel
-                wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
-                            lmList[15][1], lmList[15][2], angle])
+                var = 5  # variação do ângulo
+                teste = 3
 
+                # Teste 1
+                if teste == 1:
+                    if 90 - var < angle < 91 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 1])
+                    elif 180 - var < angle < 180:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 0])
+
+                if teste == 2:
+                    if 90 - var < angle < 91 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 2])
+
+                    elif 180 - var < angle < 180:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 0])
+
+                    elif 30 - var < angle < 31 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 1])
+
+                if teste == 3:
+                    if 180 - var < angle < 180:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 0])
+
+                    elif 30 - var < angle < 31 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 1])
+                    elif 45 - var < angle < 41 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 2])
+
+                    elif 90 - var < angle < 91 + var:
+                        wb1.append([lmList[11][1], lmList[11][2], lmList[13][1], lmList[13][2],
+                                    lmList[15][1], lmList[15][2], 3])
             """try:
                 # Left Arm
                 angle = detector.findAngle(img, 12, 14, 16)
-                # fazer o angulo converter de 0 a 100
                 per = np.interp(angle, (217, 315), (0, 100))
-                
-                # Contagem das repetições
+                bar = np.interp(angle, (217, 315), (400, 100))
+                lmList = detector.findPosition(img, draw=False)
+                print(lmList[12])
                 if per == 0:
                     if dir == 0:
                         count += 0.5
@@ -72,6 +119,10 @@ while cap.isOpened():
                         count += 0.5
                         dir = 0
             finally:
+                # barra retangular
+                cv2.rectangle(img, (50, 400), (50, 400), (0, 255, 0), 3)
+                cv2.rectangle(img, (50, int(bar)), (60, 400), (0, 255, 0), cv2.FILLED)
+                cv2.putText(img, f'{int(per)}%', (55, 300), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 4)
                 # repetição
                 cv2.putText(img, str(int(count)), (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 5)
 

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="logo_imagem">
+    <file>ufabc.png</file>
+  </qresource>
+</RCC>
