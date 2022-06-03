@@ -98,7 +98,7 @@ QFrame{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>132</width>
+               <width>74</width>
                <height>315</height>
               </rect>
              </property>
@@ -334,7 +334,7 @@ QFrame{
              <widget class="QLabel" name="label_3">
               <property name="geometry">
                <rect>
-                <x>78</x>
+                <x>110</x>
                 <y>240</y>
                 <width>231</width>
                 <height>20</height>
@@ -362,7 +362,7 @@ QFrame{
               </property>
               <property name="geometry">
                <rect>
-                <x>80</x>
+                <x>110</x>
                 <y>0</y>
                 <width>223</width>
                 <height>228</height>
@@ -411,9 +411,24 @@ background-position: center;</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_9">
                  <item>
-                  <widget class="QFrame" name="frame_4">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(211, 215, 207);</string>
+                  <widget class="QFrame" name="frame_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -424,17 +439,14 @@ background-position: center;</string>
                    <widget class="QLabel" name="label_2">
                     <property name="geometry">
                      <rect>
-                      <x>-10</x>
+                      <x>140</x>
                       <y>0</y>
-                      <width>390</width>
+                      <width>91</width>
                       <height>17</height>
                      </rect>
                     </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
                     <property name="text">
-                     <string>   Parâmetros</string>
+                     <string>Parâmetros</string>
                     </property>
                    </widget>
                   </widget>
@@ -442,142 +454,77 @@ background-position: center;</string>
                  <item>
                   <widget class="QFrame" name="frame">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_2">
-                    <item>
-                     <widget class="QPushButton" name="btn_left">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton:pressed{
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-
-border-style: outset;
-border-width: 1px;
-border-radius:15px;
-border-color: black;
-
-background-color: rgb(85, 87, 83);
-}
-
-QPushButton{
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-background-color: rgb(211, 215, 207);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Esquerdo</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="btn_right">
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton:pressed{
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-
-border-style: outset;
-border-width: 1px;
-border-radius:15px;
-border-color: black;
-
-background-color: rgb(85, 87, 83);
-}
-QPushButton{
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-left-radius:5px;
-	border-bottom-right-radius:5px;
-	
-	background-color: rgb(211, 215, 207);
-	
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Direito</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_3">
-                   <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>170</height>
-                    </size>
-                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <widget class="QStackedWidget" name="Pages_start">
-                    <property name="geometry">
-                     <rect>
-                      <x>-10</x>
-                      <y>0</y>
-                      <width>391</width>
-                      <height>181</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <widget class="QWidget" name="page1">
-                     <layout class="QVBoxLayout" name="verticalLayout_10">
+                   <layout class="QVBoxLayout" name="verticalLayout_7">
+                    <item>
+                     <widget class="QComboBox" name="comboBox_braco">
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 0, 0);
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+	
+background-color: rgb(211, 215, 207);</string>
+                      </property>
                       <item>
-                       <widget class="QLabel" name="label_4">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="text">
-                         <string>Quantidade de Amostra</string>
-                        </property>
-                       </widget>
+                       <property name="text">
+                        <string>Braço</string>
+                       </property>
                       </item>
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_amostra_1">
-                        <property name="styleSheet">
-                         <string notr="true">font: 'Quantidade de Amostra'11pt &quot;Ubuntu&quot;;
+                       <property name="text">
+                        <string>Esquerdo</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Direito</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_6">
+                      <property name="text">
+                       <string>Quantidade de Amostra</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_var_2">
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 0, 0);
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+	
+background-color: rgb(211, 215, 207);</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_7">
+                      <property name="text">
+                       <string>Variância</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_amostra_2">
+                      <property name="styleSheet">
+                       <string notr="true">font: 'Quantidade de Amostra'11pt &quot;Ubuntu&quot;;
 color: rgb(0, 0, 0);
 border-top-left-radius:5px;
 border-top-right-radius:5px;
@@ -585,207 +532,58 @@ border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
 	
 background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_5">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="text">
-                         <string>Variância</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_var_1">
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0, 0, 0);
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="comboBox_classe">
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(0, 0, 0);
 border-top-left-radius:5px;
 border-top-right-radius:5px;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
 	
 background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Selecione a Quantidade de Classe</string>
+                       </property>
                       </item>
                       <item>
-                       <widget class="QComboBox" name="comboBox_1">
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0, 0, 0);
-border-top-left-radius:5px;
+                       <property name="text">
+                        <string>2</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>3</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>4</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="start">
+                      <property name="styleSheet">
+                       <string notr="true">border-top-left-radius:5px;
 border-top-right-radius:5px;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
 	
-background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <item>
-                         <property name="text">
-                          <string>Selecione a Quantidade de Classe</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>2</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>3</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>4</string>
-                         </property>
-                        </item>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QPushButton" name="start1">
-                        <property name="styleSheet">
-                         <string notr="true">border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-	
-background-color: rgb(211, 215, 207);
-
-</string>
-                        </property>
-                        <property name="text">
-                         <string>Start</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                    <widget class="QWidget" name="page2">
-                     <layout class="QVBoxLayout" name="verticalLayout_11">
-                      <item>
-                       <widget class="QLabel" name="label_7">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="text">
-                         <string>Quantidade de Amostra</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_amostra_2">
-                        <property name="styleSheet">
-                         <string notr="true">font: 'Quantidade de Amostra'11pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-	
-background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_6">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="text">
-                         <string>Variância</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_var_2">
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0, 0, 0);
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-	
-background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QComboBox" name="comboBox_2">
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0, 0, 0);
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-	
-background-color: rgb(211, 215, 207);</string>
-                        </property>
-                        <item>
-                         <property name="text">
-                          <string>Selecione a Quantidade de Classe</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>2</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>3</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>4</string>
-                         </property>
-                        </item>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QPushButton" name="start2">
-                        <property name="styleSheet">
-                         <string notr="true">border-top-left-radius:5px;
-border-top-right-radius:5px;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-	
-background-color: rgb(211, 215, 207);
-
-</string>
-                        </property>
-                        <property name="text">
-                         <string>Start</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </widget>
+background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Start</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -812,12 +610,12 @@ background-color: rgb(211, 215, 207);
                <rect>
                 <x>20</x>
                 <y>40</y>
-                <width>67</width>
+                <width>241</width>
                 <height>17</height>
                </rect>
               </property>
               <property name="text">
-               <string>link: </string>
+               <string>link:  https://github.com/alans96</string>
               </property>
              </widget>
              <widget class="QLabel" name="label_14">
@@ -825,12 +623,12 @@ background-color: rgb(211, 215, 207);
                <rect>
                 <x>20</x>
                 <y>70</y>
-                <width>67</width>
+                <width>91</width>
                 <height>17</height>
                </rect>
               </property>
               <property name="text">
-               <string>Email</string>
+               <string>Linkedin</string>
               </property>
              </widget>
              <widget class="QLabel" name="label_15">
@@ -838,12 +636,12 @@ background-color: rgb(211, 215, 207);
                <rect>
                 <x>20</x>
                 <y>90</y>
-                <width>67</width>
+                <width>361</width>
                 <height>17</height>
                </rect>
               </property>
               <property name="text">
-               <string>....</string>
+               <string>https://www.linkedin.com/in/alan-silva-061048236/</string>
               </property>
              </widget>
             </widget>
@@ -857,7 +655,7 @@ background-color: rgb(211, 215, 207);
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_17">
+               <widget class="QLabel" name="label_4">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                   <horstretch>0</horstretch>
@@ -865,7 +663,16 @@ background-color: rgb(211, 215, 207);
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Texto sobre o programa</string>
+                 <string>  O desenvolvimento deste aplicativo,  tem como foco  no  rastrea
+mento e identificao de pontos de  interesse,  relativos  ao  braço 
+de uma pessoa em  que  se  captura a  movimentação,  utilizando 
+uma   webcam   comum,   conjuntamente   com   ferramentas   da 
+biblioteca OpenCV  que  permite   relizar   o   processamento   da 
+imagem    e    paralelamente    realizandoa    captura     de     sinais 
+EMG(Eletromiográficos) com o dispositivo Myo - armband . 
+   A  identificação  dos  pontos   de   interesse   foi   realizada   pelo 
+framework open-source MediaPipe e a criação da interface gráfica 
+foi feita utilizando-se da biblioteca PyQt5.</string>
                 </property>
                </widget>
               </item>
