@@ -30,7 +30,6 @@ class PoseDetector:  # Classe para detectar pessoas
 
         self.var = 2
         self.teste= 2
-        
 
 
 
