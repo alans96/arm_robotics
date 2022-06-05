@@ -352,7 +352,7 @@ QFrame{
              <bool>false</bool>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_home">
              <widget class="QLabel" name="label_3">
@@ -526,7 +526,7 @@ background-color: rgb(211, 215, 207);</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_var_2">
+                     <widget class="QLineEdit" name="lineEdit_amostra">
                       <property name="styleSheet">
                        <string notr="true">color: rgb(0, 0, 0);
 border-top-left-radius:5px;
@@ -546,7 +546,7 @@ background-color: rgb(211, 215, 207);</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_amostra_2">
+                     <widget class="QLineEdit" name="lineEdit_var">
                       <property name="styleSheet">
                        <string notr="true">font: 'Quantidade de Amostra'11pt &quot;Ubuntu&quot;;
 color: rgb(0, 0, 0);

@@ -3,7 +3,7 @@ import mediapipe as mp
 import math
 
 ################
-from Ui_MainWindow import Ui_MainWindow
+from UI_MainWindow import Ui_MainWindow
 ################
 
 

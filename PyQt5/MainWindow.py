@@ -4,7 +4,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QToolBox
-from Ui_MainWindow import Ui_MainWindow
+from UI_MainWindow import Ui_MainWindow
 ###########################################
 import cv2
 import numpy as np
@@ -56,7 +56,7 @@ class MainWindow():
     def show_btn(self):
 
         # Escolher esquerdo e direito 
-        arm = int(self.ui.comboBox_braco.text())
+        #arm = int(self.ui.comboBox_braco.text())
 
         # Escolher a quantidade de classes
         teste = int(self.ui.comboBox_classe.currentText())
@@ -107,7 +107,7 @@ class MainWindow():
                 if len(lmList) != 0:
                     try:
                         # Left Arm
-                        angle = detector.findAngle(img, 12, 14, 16)
+                        angle = detector.findAngle(img, 11, 13, 15)
                         # fazer o angulo converter de 0 a 100
                         per = np.interp(angle, (40, 171), (0, 100))
                         # barra
@@ -126,13 +126,13 @@ class MainWindow():
 
                     finally:
                         # Barra retangular fixa
-                        cv2.rectangle(img, (50, 400), (50, 400), (0, 255, 0), 3)
+                        #cv2.rectangle(img, (50, 400), (50, 400), (0, 255, 0), 3)
                         # Barra móvel
-                        cv2.rectangle(img, (50, int(bar)), (60, 400), (0, 255, 0), cv2.FILLED)
-                        cv2.putText(img, f'{int(per)}%', (55, 300), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 4)
+                        #cv2.rectangle(img, (50, int(bar)), (60, 400), (0, 255, 0), cv2.FILLED)
+                        #cv2.putText(img, f'{int(per)}%', (55, 300), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 4)
 
                         # Número da repetição
-                        cv2.putText(img, str(int(count)), (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 5)
+                        #cv2.putText(img, str(int(count)), (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 5)
                         
                         # Teste 1
                         if teste == 2:
@@ -165,15 +165,15 @@ class MainWindow():
                                 wb1.append([lmList[12][1], lmList[12][2], lmList[14][1], lmList[14][2],
                                             lmList[16][1], lmList[16][2], 0])
                             
-                            elif 225 - var < angle < 226 + var:
+                            elif 135 - var < angle < 136 + var:
                                 wb1.append([lmList[12][1], lmList[12][2], lmList[14][1], lmList[14][2],
                                             lmList[16][1], lmList[16][2], 1])
                             
-                            elif 270 - var < angle < 271 + var:
+                            elif 90 - var < angle < 91 + var:
                                 wb1.append([lmList[12][1], lmList[12][2], lmList[14][1], lmList[14][2],
                                             lmList[16][1], lmList[16][2], 2])
 
-                            elif 300 - var < angle < 301 + var:
+                            elif 30 - var < angle < 31 + var:
                                 wb1.append([lmList[12][1], lmList[12][2], lmList[14][1], lmList[14][2],
                                             lmList[16][1], lmList[16][2], 3])
 
