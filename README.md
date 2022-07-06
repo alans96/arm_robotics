@@ -1,7 +1,7 @@
 # 
 arm_robotics
 
-## Sobre o projeto
+## Sobre o Projeto
 
 Este projeto foi desenvolvido de forma a facilitar a captura de categorias pré-definidas do ângulo de cotovelo pelo usuário, utilizando apenas uma webcam de computador/notebook comum.
 
