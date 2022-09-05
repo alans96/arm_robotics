@@ -8,7 +8,7 @@ from UI_MainWindow import Ui_MainWindow
 ###########################################
 import cv2
 import numpy as np
-import PoseModule as pm
+import codigo_base.PoseModule as pm
 from openpyxl import Workbook
 ###########################################
 
